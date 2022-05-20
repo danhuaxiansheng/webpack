@@ -209,16 +209,35 @@ const path = require("path");
 //   },
 // };
 
-module.exports = (env) => {
-  // Use env.<YOUR VARIABLE> here:
-  console.log("Goal: ", env.goal); // 'local'
-  console.log("Production: ", env.production); // true
+// 热更新
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  entry: {
+    app: "./src/index.js",
+  },
 
-  return {
-    entry: "./src/index.js",
-    output: {
-      filename: "bundle.js",
-      path: path.resolve(__dirname, "dist"),
-    },
-  };
+  // 开发环境 inline-source-map
+  // 生产环境 source-map
+  devtool: "inline-source-map",
+  devServer: {
+    static: "./dist",
+    hot: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Hot Module Replacement",
+    }),
+  ],
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
 };
+
+
+
+
+
+
+
