@@ -1,7 +1,7 @@
 const path = require("path");
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-// --试题1
+// // 文件解析配置
 // module.exports = {
 //   entry: "./src/index.js",
 //   output: {
@@ -37,17 +37,17 @@ const path = require("path");
 //         use: ["xml-loader"],
 //       },
 //       // webpack es5语法转换，
-//        {
-//          test: /\.js$/,
-//          // include 仅在需要时 进行启动
-//          include: path.resolve(__dirname, "src"),
-//          loader: "babel-loader",
-//         },
+//       {
+//         test: /\.js$/,
+//         // include 仅在需要时 进行启动
+//         include: path.resolve(__dirname, "src"),
+//         loader: "babel-loader",
+//       },
 //     ],
 //   },
 // };
 
-// 多入口打包
+// // 多入口打包
 // module.exports = {
 //   // 设置为开发模式
 //   mode: "development",
@@ -82,7 +82,7 @@ const path = require("path");
 //   },
 // };
 
-// 代码分离
+// // 代码分离
 // module.exports = {
 //   mode: "development",
 //   entry: {
@@ -108,7 +108,7 @@ const path = require("path");
 //   },
 // };
 
-// 代码抽离
+// // 代码抽离
 // module.exports = {
 //   mode: "development",
 //   entry: {
@@ -134,7 +134,7 @@ const path = require("path");
 //   ],
 // };
 
-// 缓存
+// // 缓存
 // module.exports = {
 //   entry: "./src/index.js",
 //   plugins: [
@@ -176,7 +176,7 @@ const path = require("path");
 //   },
 // };
 
-// 库
+// // 代码分离打包-避免重复引入
 // module.exports = {
 //   entry: "./src/index.js",
 //   plugins: [
@@ -209,7 +209,7 @@ const path = require("path");
 //   },
 // };
 
-// 热更新
+// 热更新配置
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
@@ -234,10 +234,3 @@ module.exports = {
     clean: true,
   },
 };
-
-
-
-
-
-
-
